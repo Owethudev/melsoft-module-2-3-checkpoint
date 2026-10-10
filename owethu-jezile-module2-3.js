@@ -448,3 +448,41 @@ const arr = [1, 2, 3, 4]; delete arr[1];
 //they are dangerous because they do not remove an item they just replace with an empty item
 //4.
 delete Math.PI; //non configurable property is something that cannot be deleted or changed.
+// dont use delete because it does not remove an item they just replace with an empty item , use splice instead.
+
+//challenge8
+const READ = 1;   // 0001
+const WRITE = 2;  // 0010
+const DELETE = 4; // 0100
+const ADMIN = 8;  // 1000
+
+let userBit = READ | WRITE;
+console.log(`User permissions: ${userBit}`); // 3
+// 2. Create an admin user with ALL permissions
+let adminUser = READ | WRITE | DELETE | ADMIN;
+console.log(`Admin permissions: ${adminUser}`); // 15
+// 3. Check if the user has READ permission
+let permissionCheck = (userBit & READ) !== 0 ? "Yes" : "No";
+console.log(`Has READ? ${permissionCheck}`);
+// Yes
+// 4. Check if the user has DELETE permission
+let deleteCheck = (userBit & DELETE) !== 0 ? "Yes" : "No";
+console.log(`Has DELETE? ${deleteCheck}`);
+// No
+// 5. Grant DELETE permission to the user
+userBit |= DELETE;
+console.log(`5. After granting DELETE: ${userBit}`); // 7
+// 6. Revoke WRITE permission from the user
+userBit &= ~WRITE;
+console.log(`6. After removing WRITE: ${userBit}`); // 5
+// 7. Toggle ADMIN permission using XOR
+userBit ^= ADMIN;
+console.log(`7. After toggling ADMIN on: ${userBit}`); // 13
+userBit ^= ADMIN;
+console.log(`   After toggling ADMIN off: ${userBit}`); // 5
+// 8. Create SUPER_ADMIN using left shift
+const SUPER_ADMIN = 1 << 4;
+console.log(`8. SUPER_ADMIN permission: ${SUPER_ADMIN}`); // 16
+/*1.we usebitwise because it is quicker and saves memory
+2.the readability is better without bitwise
+3. | and & are the bitwise operators while || and && are the logical operators*/
