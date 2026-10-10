@@ -2,31 +2,22 @@
 
 // const because my name will never change
 const myName = "Owethu Jezile";
-
 // let because my age is constantly changing
 let myAge = 23;
-
 // let because opinion can change anytime
 let myOpinion = true;
-
 // let because my favourite temperature can change
 let myFavouriteTemperature = 22.5;
-
 // const because NaN is a constant value
 const myNaN = Number('not a number');
-
 // const because Infinity is a constant value
 const myInfinity = 1 / 0;
-
 // const because Number.MAX_SAFE_INTEGER is a constant value
 const myMaxSafeInteger = Number.MAX_SAFE_INTEGER;
-
 // const because null is a constant value
 const myNull = null;
-
 // const because undefined is a constant value
 const myUndefined = undefined;
-
 // A template literal that uses at least two of the above variables
 const myTemplateLiteral = `My name is ${myName} and my favourite temperature is ${myFavouriteTemperature} degrees Celsius.`;
 
@@ -65,7 +56,6 @@ console.log(`${typeof (typeof 42)}`);
 console.log(`${typeof [1, 2, 3]}`);
 //prediction - function , actual output - function
 console.log(`${typeof function() {}}`);
-
 /*
 i dont know why does typeof null return 'object' I just know it does and
 NaN returns 'number' because it represents a number that is not a valid number */
@@ -121,7 +111,6 @@ console.log(`result: ${fourthvalue4} and type: ${typeof fourthvalue4}`);
 let fourthvalue5 = String("42abc");
 console.log(`result: ${fourthvalue5} and type: ${typeof fourthvalue5}`);
 
-
 //fifth value conversion
 let fifthValue = Number("");
 console.log(`result: ${fifthValue} and type: ${typeof fifthValue}`);
@@ -176,57 +165,46 @@ console.log(`result: ${eighthvalue5} and type: ${typeof eighthvalue5}`);
 let predict1 = "5" + 3;
 console.log(`${typeof predict1}`);
 //under the hood, the + operator is used for string concatenation when one of the operands is a string.
-
 //prediction - we get 2 and number resulting type
 let predict2 = "5" - 3;
 console.log(`${typeof predict2}`);
 //under the hood, the - operator converts the string to a number.
-
 //prediction - we get 10 and number resulting type
 let predict3 = "5" * "2";
 console.log(`${typeof predict3}`);
 //under the hood, the * operator converts both strings to numbers.
-
 //prediction - we get 2 and number resulting type
 let predict4 = true + 1;
 console.log(`${typeof predict4}`);
 //under the hood, the + operator  converts the boolean to a number.
-
 //prediction - we get "true1" and string resulting type
 let predict5 = true + "1";
 console.log(`${typeof predict5}`);
 //under the hood, the + operator is used for string concatenation when one of the operands is a string.
-
 //prediction - we get 0 and number resulting type
 let predict6 = false + null;
 console.log(`${typeof predict6}`);
 //under the hood, the +  converts the boolean to a number and null to a number .
-
 //prediction - we get undefined and undefined resulting type
 let predict7 = null + undefined;
 console.log(`${typeof predict7}`);
 //under the hood, the + operator converts both operands to numbers.
-
 //prediction - we get Infinity and number resulting type
 let predict8 = 1 / 0;
 console.log(`${typeof predict8}`);
 //under the hood, any number above zero in javascript results in Infinity when dividing by zero.
-
 //prediction - we get NaN and number resulting type
 let predict9 = 0 / 0;
 console.log(`${typeof predict9}`);
 //under the hood, dividing zero by zero results in NaN.
-
 //prediction - we get NaN and number resulting type
 let predict10 = "abc" - 1;
 console.log(`${typeof predict10}`);
 //under the hood, the - operator converts the string to a number.
-
 //prediction - we get "undefined" and string resulting type
 let predict11 = [] + [];
 console.log(`${typeof predict11}`);
 //under the hood, the + operator converts both operands to strings.
-
 //prediction - we get "12" and string resulting type
 let predict12 = [1] + [2];
 console.log(`${typeof predict12}`);
@@ -376,4 +354,57 @@ console.log(`${confirmPassword}`);
 //15. prediction - 4 , "5" - 3 = 2 + 2 = 4
     console.log("5" - 3 + 2);    
 
-/*interview answer - for better readability and maintainability */
+/*interview answer - for better readability and maintainability*/
+
+//challenge6
+//partA
+let grade = prompt("Enter your grade:") >= 90 ? "A" : prompt("Enter your grade:") >= 80 ? "B" :prompt("Enter your grade:") >= 70 ? "C" :prompt("Enter your grade:") >= 60 ? "D" :prompt("Enter your grade:") >= 50 ? "E": "F";
+console.log(grade);// Test cases: 95 - A, 82 - B, 73 - C, 65 - D, 54 - E, 42 - F, 0 - F, 100 - A
+
+//partB
+let displayName = prompt("Enter your name:") || 'Guest User';
+let theme = prompt("Enter your theme:") || 'light';
+let maxResults = prompt("Enter max results:") || 10;
+let lastLogin = prompt("Enter last login:") ?? 'Never';
+let notificationCount = prompt("Enter notification count:") ?? 0;
+//?? checks the first value if its null or undefined then it will return the second value but if the first value is not null or undefined then it will return the first value.
+
+//partC
+let user1 = {
+    address:{
+        city: "New York"
+    }
+};
+let user2 = {
+    address: null
+};
+let user3 = {};
+//user1 tests
+console.log(user1 && user1.address && user1.address.city); // Output: "New York"
+console.log(user1?.address?.city); // Output: "New York"
+//user2 tests
+console.log(user2 && user2.address && user2.address.city); // Output: undefined
+console.log(user2?.address?.city); // Output: undefined
+//user3 tests
+console.log(user3 && user3.address && user3.address.city); // Output: undefined
+console.log(user3?.address?.city); // Output: undefined
+
+//partD
+//prediction- "finally" , actual output - "finally"
+console.log(null || undefined || 0 || "" || "finally");
+//prediction- "first truthy" , actual output - "first truthy"
+console.log(0 || "first truthy");
+//prediction- 0 , actual output - "first non-nullish"
+console.log(0 ?? "first non-nullish");
+//prediction- false , actual output - false
+console.log(true && false && "never reached");
+//prediction- "third" , actual output - "third"
+console.log("first" && "second" && "third");
+//prediction- "yes" , actual output - "yes"
+console.log(false || (true && "yes"));
+//prediction- "yes" , actual output - "yes"
+console.log((false || true) && "yes");
+//prediction- 3 , actual output - 3
+console.log(1 && 2 && 3);
+//prediction- i dont know, actual output - undefined
+console.log(null?.foo?.bar?.baz);
