@@ -283,3 +283,63 @@ let ageThabo = 28;
 let greeting1 = "Welcome back " + firstName + " " + lastName + ", you are " + ageThabo + " years old.";
 let greeting2 = `Welcome back ${firstName} ${lastName}, you are ${ageThabo} years old.`;
 //template literals are better because they are more readable and easier to maintain.
+/*1.let x = 5 ; ++x = 6 ; x++ = 5 ;
+2.let example = 10 % 3; // Returns 1
+let example2 = 15 % 4; // Returns 3
+let example3 = 20 % 6; // Returns 2
+3.bad practie , i would not use them when there is alot of variables and complexity
+*/
+
+//challenge4
+//partA
+//1.prediction - true because false when converted to a number is zero , actual output - true.
+console.log(0 == false);
+//2.prediction - false because strict equality compares both value and type, actual output - false.
+console.log(0 === false);
+//3.prediction - true because an empty string is converted to 0, actual output - true.
+console.log("" == 0);
+//4.prediction - false because strict equality checks the type as well, actual output - false.
+console.log("" === 0);
+//5.prediction - true because the string "0" is converted to the number 0, actual output - true.
+console.log("0" == 0);
+//6.prediction - false because strict equality does not convert types, actual output - false.
+console.log("0" === 0);
+//7.prediction - false , actual output - true.
+console.log(null == undefined);
+//8.prediction - false because null and undefined are different types, actual output - false.
+console.log(null === undefined);
+//9.prediction - true because null is 0 when converted to a number, actual output - false.
+console.log(null == 0);
+//10.prediction - true because null is converted to 0 in a comparison, actual output - true.
+console.log(null >= 0);
+//11.prediction - false because 0 > 0 is false, actual output - false.
+console.log(null > 0);
+//12.prediction - false because NaN is not equal to itself, actual output - false.
+console.log(NaN == NaN);
+//13.prediction - false because NaN is never strictly equal to itself, actual output - false.
+console.log(NaN === NaN)
+//14.prediction - false because NaN is never strictly equal to itself, actual output - false.
+console.log(Object.is(NaN, NaN))
+//15.prediction - true because +0 and -0 are considered equal in strict comparison, actual output - true.
+console.log(+0 === -0)
+//16.prediction - false because Object.is distinguishes between +0 and -0, actual output - false.
+console.log(Object.is(+0, -0))
+//17.prediction - true because the array is converted to the string "1,2,3", actual output - true.
+console.log([1,2,3] == "1,2,3")
+//18.prediction - true because an empty array becomes an empty string, which converts to 0 and false also converts to 0, actual output - true.
+console.log([] == false)
+//19.prediction - true because an empty array becomes an empty string and then 0, actual output - true.
+console.log([] == 0)
+//20.prediction - true because [0] converts to "0", which becomes 0, and false also converts to 0, actual output - true.
+console.log([0] == false)
+
+//partB
+let currentEmail = "owethujezile@gmail.com";
+let confirmEmail = prompt("Confirm your email:") === currentEmail ? "Email confirmed" : "Emails do not match";
+console.log(`${confirmEmail}`);
+let newPassword = prompt("Enter a new password:").length >=8 ? "Password is valid" : "Password must be at least 8 characters long";
+console.log(`${newPassword}`);
+let newPassword2 = prompt("please re enter new password for final check") !== currentEmail ? "Password confirmed" : "Passwords must not be the same as the email";
+console.log(`${newPassword2}`);
+let confirmPassword = prompt("Confirm your new password:") === newPassword ? "Password confirmed" : "Passwords do not match";
+console.log(`${confirmPassword}`);
