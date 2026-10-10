@@ -486,3 +486,57 @@ console.log(`8. SUPER_ADMIN permission: ${SUPER_ADMIN}`); // 16
 /*1.we usebitwise because it is quicker and saves memory
 2.the readability is better without bitwise
 3. | and & are the bitwise operators while || and && are the logical operators*/
+
+//challenge9
+//scenario1
+{
+let grossSalary = (45000).toFixed(2);
+console.log(`Gross Salary: R ${grossSalary}`);
+let payeTax = (grossSalary * 0.25).toFixed(2);
+console.log(`PAYE Tax: R ${payeTax}`);
+let uif = (grossSalary * 0.01).toFixed(2);
+console.log(`UIF: R ${uif}`);
+let cappedUIF = uif > 177.12 ? (177.12).toFixed(2) : uif;
+console.log(`Capped UIF: R ${cappedUIF}`);
+let medicalAid = (2500).toFixed(2);
+console.log(`Medical Aid: R ${medicalAid}`);
+let pension = (grossSalary * 0.075).toFixed(2);
+console.log(`Pension: R ${pension}`);
+let totalDeductions = (parseFloat(payeTax) + parseFloat(cappedUIF) + parseFloat(medicalAid) + parseFloat(pension)).toFixed(2);
+console.log(`Total Deductions: R ${totalDeductions}`);
+let netSalary = (grossSalary - totalDeductions).toFixed(2);
+console.log(`Net Salary: R ${netSalary}`);
+}
+
+//scenario2
+{
+let principal = 25000;
+let annualInterestRate = 0.075;
+let compoundingFrequency = 12;
+let timeInYears = 3;
+
+let finalBalance = principal * (1 + annualInterestRate / compoundingFrequency)^(compoundingFrequency * timeInYears);
+console.log(`Final Balance: R ${finalBalance.toFixed(2)}`);
+
+let totalInterestEarned = finalBalance - principal;
+console.log(`Total Interest Earned: R ${totalInterestEarned.toFixed(2)}`);
+
+// Monthly fee based on balance using ONE ternary chain
+let monthlyFee = principal < 1000 ? 25 : principal < 5000 ? 50 : principal < 25000 ? 75 : 0;
+console.log(`Monthly Fee: R ${monthlyFee.toFixed(2)}`);
+// R500 - R999: R25, R1,500: R50, R10,000: R75, R50,000: R0
+}
+
+//scenario3
+let sendAmount = 15750.33;
+let exchangeRate = 18.42;
+let commissionRate = 0.025;
+let commission = sendAmount * commissionRate;
+console.log(`Commission: R ${commission.toFixed(2)}`);
+let AfterCommission = sendAmount - commission;
+console.log(`ZAR amount after commission: R ${AfterCommission.toFixed(2)}`);
+let usdReceived = AfterCommission / exchangeRate;
+console.log(`USD amount received: $${usdReceived.toFixed(2)}`);
+
+/* it caused a potential problem with commission because of the three decimal places and i formatted using to.Fixed(2)
+banks would store numbers as cents to avoid dealing with decimals,because JS can produce unexpected results*/
