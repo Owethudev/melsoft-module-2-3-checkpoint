@@ -180,17 +180,17 @@ console.log(`${typeof predict1}`);
 //prediction - we get 2 and number resulting type
 let predict2 = "5" - 3;
 console.log(`${typeof predict2}`);
-//under the hood, the - operator is used for subtraction and it converts the string to a number.
+//under the hood, the - operator converts the string to a number.
 
 //prediction - we get 10 and number resulting type
 let predict3 = "5" * "2";
 console.log(`${typeof predict3}`);
-//under the hood, the * operator is used for multiplication and it converts both strings to numbers.
+//under the hood, the * operator converts both strings to numbers.
 
 //prediction - we get 2 and number resulting type
 let predict4 = true + 1;
 console.log(`${typeof predict4}`);
-//under the hood, the + operator is used for addition and it converts the boolean to a number (true becomes 1).
+//under the hood, the + operator  converts the boolean to a number.
 
 //prediction - we get "true1" and string resulting type
 let predict5 = true + "1";
@@ -200,34 +200,86 @@ console.log(`${typeof predict5}`);
 //prediction - we get 0 and number resulting type
 let predict6 = false + null;
 console.log(`${typeof predict6}`);
-//under the hood, the + operator is used for addition and it converts the boolean to a number and null to a number .
+//under the hood, the +  converts the boolean to a number and null to a number .
 
 //prediction - we get undefined and undefined resulting type
 let predict7 = null + undefined;
 console.log(`${typeof predict7}`);
-//under the hood, the + operator is used for addition and it converts both operands to numbers (null becomes 0 and undefined becomes NaN).
+//under the hood, the + operator converts both operands to numbers.
 
 //prediction - we get Infinity and number resulting type
 let predict8 = 1 / 0;
 console.log(`${typeof predict8}`);
-//under the hood, the / operator is used for division and it results in Infinity when dividing by zero.
+//under the hood, any number above zero in javascript results in Infinity when dividing by zero.
 
 //prediction - we get NaN and number resulting type
 let predict9 = 0 / 0;
 console.log(`${typeof predict9}`);
-//under the hood, the / operator is used for division and it results in NaN when dividing zero by zero.
+//under the hood, dividing zero by zero results in NaN.
 
 //prediction - we get NaN and number resulting type
 let predict10 = "abc" - 1;
 console.log(`${typeof predict10}`);
-//under the hood, the - operator is used for subtraction and it converts the string to a number (NaN) before performing the operation.
+//under the hood, the - operator converts the string to a number.
 
 //prediction - we get "undefined" and string resulting type
 let predict11 = [] + [];
 console.log(`${typeof predict11}`);
-//under the hood, the + operator is used for string concatenation when one of the operands is an array.
+//under the hood, the + operator converts both operands to strings.
 
 //prediction - we get "12" and string resulting type
 let predict12 = [1] + [2];
 console.log(`${typeof predict12}`);
-//under the hood, the + operator is used for string concatenation when one of the operands is an array.
+//under the hood, the + operator converts both operands to strings.
+
+/* 1.Number('42abc') - will convert the whole value into a value then get NaN
+     parseInt('42abc') - Will give us the integer in the string which is 42
+   2.when we have decimals especially in banking when we are dealing with money
+   3.it returns zero , a user might leave the field blank but we get a value of zero*/
+
+//challenge3
+/*1.we take the monthly gross salary and calculate the tax, UIF, and medical aid amounts 
+    then we get to the net salary*/
+let monthlyGrossSalary = 45000;
+let taxRate = 0.25;
+let uifRate = 0.01;
+let medicalAid = 2500;
+let taxAmount = monthlyGrossSalary * taxRate;
+let uifAmount = monthlyGrossSalary * uifRate;
+let netSalary = monthlyGrossSalary - taxAmount - uifAmount - medicalAid;
+console.log(`net salary is: R ${netSalary.toFixed(2)}`);
+/*2. calculating the total value of items in a shopping cart, applying a discount, and adding VAT*/
+let cart = 0;
+cart+= 150;
+cart+= 85;
+cart+= 220;
+let discount = 0.1;
+let vat = 0.15;
+let discountAmount = cart * discount;
+let vatAmount = (cart - discountAmount) * vat;
+let finalCartValue = cart - discountAmount + vatAmount;
+console.log(`total cart value is: R ${finalCartValue.toFixed(2)}`);
+//3.
+let name = prompt("Enter your name:") ;
+let age = parseInt(prompt("Enter your age:")) >= 18 ? "Age is valid" : "Age is not valid";
+let password = prompt("Enter your password:").length >= 8 ? "Password is valid" : "Password is not valid";
+let Email = prompt("Enter your email:");
+let confirmedEmail = prompt("Confirm your email:") === Email ? "Email confirmed" : "Email does not match";
+//4.
+let loggedIn = true;
+let emailVerified = true;
+let isAdmin = false;
+let access = (loggedIn && emailVerified) || isAdmin ? "Access granted" : "Access denied";
+//5.
+let number = +prompt("enter a number:");
+let isDarkMode = true;
+!isDarkmode;
+//6.
+let membershipBadge = membershipType === 'premium' ? 'Premium Member' : membershipType === 'trial' ? 'Trial Member' : 'Free Member';
+//7.
+let firstName = "Thabo";
+let lastName = "Nkosi";
+let ageThabo = 28;
+let greeting1 = "Welcome back " + firstName + " " + lastName + ", you are " + ageThabo + " years old.";
+let greeting2 = `Welcome back ${firstName} ${lastName}, you are ${ageThabo} years old.`;
+//template literals are better because they are more readable and easier to maintain.
