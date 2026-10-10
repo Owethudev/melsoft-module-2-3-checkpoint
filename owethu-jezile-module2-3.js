@@ -408,3 +408,43 @@ console.log((false || true) && "yes");
 console.log(1 && 2 && 3);
 //prediction- i dont know, actual output - undefined
 console.log(null?.foo?.bar?.baz);
+
+//challenge7
+//partA
+//1. prediction - number , actual output - number
+//2. prediction - string , actual output - string
+//3. prediction - boolean , actual output - boolean
+//4. prediction - undefined , actual output - undefined
+//5. prediction - object , actual output - object
+//6. prediction - object , actual output - object
+//7. prediction - object , actual output - object
+//8. prediction - function , actual output - function
+//9. prediction - number , actual output - number
+//10. prediction - undefined , actual output - undefined
+//array = [] , object = {}
+
+//partB
+//1. prediction - true , actual output - true
+//2. prediction - true , actual output - true
+//3. prediction - true , actual output - true
+//4. prediction - false , actual output - false
+//5. prediction - true , actual output - true
+//6. prediction - false , actual output - false
+//7. prediction - true , actual output - true
+//8. prediction - true , actual output - true
+//typeof = when you are dealing with primitive data types and instanceof = when you are dealing with complex data types like objects and arrays.
+
+//partC
+//1.
+const user = { name: 'Lerato', age: 25, role: 'student' };
+console.log(user); // before: { name: 'Lerato', age: 25, role: 'student' }
+delete user.role;
+console.log(user); // after: { name: 'Lerato', age: 25 }
+//2.
+{ let x = 5; delete x; }
+console.log(x); // Output: 5 ...nothing happens
+//3.
+const arr = [1, 2, 3, 4]; delete arr[1];
+//they are dangerous because they do not remove an item they just replace with an empty item
+//4.
+delete Math.PI; //non configurable property is something that cannot be deleted or changed.
