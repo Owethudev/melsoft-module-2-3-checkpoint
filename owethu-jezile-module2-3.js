@@ -343,3 +343,37 @@ let newPassword2 = prompt("please re enter new password for final check") !== cu
 console.log(`${newPassword2}`);
 let confirmPassword = prompt("Confirm your new password:") === newPassword ? "Password confirmed" : "Passwords do not match";
 console.log(`${confirmPassword}`);
+
+//challenge5
+//1.prediction - 13 ,3 * 4 first then 2+12-1 = 13
+    console.log(2 + 3 * 4 - 1);
+//2. prediction - 15 , 2+3 = 5 , 4-1 = 3 , 5*3 = 15
+    console.log((2 + 3) * (4 - 1));    
+//3. prediction - 4 , 10 - 4 = 6 , 6 - 2 = 4
+    console.log(10 - 4 - 2);
+//4. prediction - 512 , (3 ** 2) = 9 , (2 ** 9) = 512
+    console.log(2 ** 3 ** 2); 
+//5. prediction - 7 , 10 % 3 = 1 , 1 * 2 = 2 , 2 + 1 = 3
+    console.log(10 % 3 * 2 + 1);
+//6. prediction - 5 , 100 / 4 = 25 , 25 / 5 = 5
+    console.log(100 / 4 / 5);
+//7. prediction - true , 5 + 2 =7 , 7 > 6 = true , 3 < 4 = true
+    console.log(5 + 2 > 6 && 3 < 4);
+//8. prediction - true , true && false = false , false || true = true
+    console.log(true && false || true && true);
+//9. prediction - true , !false = true , !!0 = false
+    console.log(!false && !!0);
+//10. prediction - true , 5 > 3 = true , 10 < 20 = true , !(2 === "2") = true
+    console.log(5 > 3 && 10 < 20 || !(2 === "2"));
+//11. prediction - 1150 , 1000 * 1.15 = 1150
+    console.log(1000 * 1.15 * 0.9);
+//12. prediction - "number" , 6 is a number
+    console.log(typeof 5 + 1);
+//13. prediction - "number" , (5 + 1) = 6 ,6 is a number
+    console.log(typeof (5 + 1));
+//14. prediction - "53" , "5" + 3 = "53"
+    console.log("5" + 3 * 2);
+//15. prediction - 4 , "5" - 3 = 2 + 2 = 4
+    console.log("5" - 3 + 2);    
+
+/*interview answer - for better readability and maintainability */
