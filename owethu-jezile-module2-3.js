@@ -540,3 +540,10 @@ console.log(`USD amount received: $${usdReceived.toFixed(2)}`);
 
 /* it caused a potential problem with commission because of the three decimal places and i formatted using to.Fixed(2)
 banks would store numbers as cents to avoid dealing with decimals,because JS can produce unexpected results*/
+
+//challenge10
+/*interview answers
+1. they prohibit the user to interact with the rest of the website without interacting wiht the pop ups first
+its a problem because users who choose not to interact ith them will have no access to the site and lose out on users or customers
+2. use DOM manipulation to write out messages and have forms to fill in
+3.it will return the default value that was created*/

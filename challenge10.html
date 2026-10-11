@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    window.alert("Welcome");
+    let userName = (window.prompt("Please enter your name:","Guest") ).trim();
+    let userAge = parseInt(window.prompt("Please enter your age:","0"));
+    let verifiedAge = userAge >= 1 && userAge <= 120 ? "You are eligible to vote." : window.alert("You are not eligible to vote.");
+    let tier = userAge >= 18 ? "adult." : userAge >= 60 ? "senior" : "Youth";
+    let subscribe = window.confirm("Do you want to subscribe to our newsletter?");
+    let summary = window.alert(`${userName},${userAge},${tier},${subscribe}`);
+</script>
+</html>
