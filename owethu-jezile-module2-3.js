@@ -547,3 +547,70 @@ banks would store numbers as cents to avoid dealing with decimals,because JS can
 its a problem because users who choose not to interact ith them will have no access to the site and lose out on users or customers
 2. use DOM manipulation to write out messages and have forms to fill in
 3.it will return the default value that was created*/
+
+//challenge11
+{
+// === JUNIOR DEVELOPER'S CART SCRIPT (DO NOT TRUST ANY LINE) ===
+//1.number saved as a string
+var item1Price = "199.99";
+//2.number saved as a string
+var item2Price = "49.50";
+//3.used var instead of let
+var item3Price = 125;
+//4.number saved as a string
+var quantity = "2";
+//5.used var instead of let
+var discountCode = "SAVE10";
+//6.stored boolean as string
+var isLoggedIn = "true";
+//7.used var instead of let
+var customerAge = null;
+//8.no parenthesis/brackts and used var instead of let
+var subtotal = item1Price + item2Price + item3Price * quantity;
+//9.not using modern template literals
+console.log("Subtotal:", subtotal);
+//10.used var instead of let
+var discount = discountCode == "SAVE10" ? 0.1 : 0;
+//11.used var instead of let
+var discountAmount = subtotal * discount;
+//12.used var instead of let
+var afterDiscount = subtotal - discountAmount;
+//13.used var instead of let
+var vat1 = afterDiscount * 0.15;
+//14.used var instead of let
+var total = afterDiscount + vat1;
+//15.no parenthesis/brackts and used var instead of let
+var canCheckout = isLoggedIn && customerAge > 18;
+//16.not using modern template literals
+console.log("Can checkout?", canCheckout);
+//17.used var instead of let
+var seniorDiscount = customerAge >= 60 ? total * 0.05 : null;
+//18.used var instead of let
+var finalTotal = total - seniorDiscount;
+//19.not using modern template literals
+console.log("Total: R" + finalTotal.toFixed(2));
+// === END OF SCRIPT ===
+}
+{
+//refactored code
+let item1Price = 199.99;
+let item2Price = 49.50;
+let item3Price = 125;
+let quantity = 2;
+let discountCode = "SAVE10";
+let isLoggedIn = true;
+let customerAge = null;
+let subtotal = item1Price + item2Price + (item3Price * quantity);
+console.log(`Subtotal: ${subtotal}`);
+let discount = discountCode == "SAVE10" ? 0.1 : 0;
+let discountAmount = subtotal * discount;
+let afterDiscount = subtotal - discountAmount;
+let vat = afterDiscount * 0.15;
+let total = afterDiscount + vat;
+let canCheckout = isLoggedIn && (customerAge > 18);
+console.log(`Can checkout? :${canCheckout}`);
+let seniorDiscount = customerAge >= 60 ? total * 0.05 : null;
+let finalTotal = total - seniorDiscount;
+console.log(`Total: R ${finalTotal.toFixed(2)}`);
+// === END OF SCRIPT ===
+}
