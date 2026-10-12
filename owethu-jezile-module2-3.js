@@ -612,5 +612,14 @@ console.log(`Can checkout? :${canCheckout}`);
 let seniorDiscount = customerAge >= 60 ? total * 0.05 : null;
 let finalTotal = total - seniorDiscount;
 console.log(`Total: R ${finalTotal.toFixed(2)}`);
-// === END OF SCRIPT ===
 }
+
+//challenge12
+/*1. it can be confusing because you would think array is a typeof array but it is not instead its an object
+2.because === checks everything even the data type for example 2 == "2" would work but theyre nit the same thing
+3. I would prefer the nullish coalescing operator (??) when I only want to replace null or undefined and keep valid values like 0
+4. typeof null returns 'object' because of an old JavaScript bug from the early days of the language. 
+5. A realistic bug happens when a developer forgets to cast a value from a string to a number in a checkout or invoice system.
+6. 0.1 + 0.2 does not equal 0.3 in JavaScript because JavaScript stores numbers in binary floating-point format and some decimal values cannot be represented exactly in binary.
+7. The single-character operators (& and |) are bitwise operators. They work on the binary form of numbers. The double-character operators (&& and ||) are logical operators
+8. The hardest concept for me was understanding bitwise operators. It was confusing at first because they work with binary numbers and not with normal true or false logic.
